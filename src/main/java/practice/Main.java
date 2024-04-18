@@ -40,7 +40,6 @@ public class Main {
       String phone = scanner.nextLine().trim();
       if (!phoneBook.getContactByPhone(phone).isEmpty()) {
         System.out.println("Контакт с таким номером уже существует");
-        scanner.close();
         return;
       }
       phoneBook.addContact(phone, name);
@@ -49,7 +48,6 @@ public class Main {
       String phone = scanner.nextLine().trim();
       phoneBook.addContact(phone, name);
     }
-    scanner.close();
   }
 
   private static void handleValidPhoneInput(String phone, PhoneBook phoneBook) {
@@ -59,7 +57,6 @@ public class Main {
       String name = scanner.nextLine().trim();
       if (!phoneBook.getContactByName(name).isEmpty()) {
         System.out.println("Контакт с таким именем уже существует");
-        scanner.close();
         return;
       }
       phoneBook.addContact(phone, name);
@@ -68,7 +65,6 @@ public class Main {
       String name = scanner.nextLine().trim();
       phoneBook.addContact(phone, name);
     }
-    scanner.close();
   }
 
   private static void listAllContacts(PhoneBook phoneBook) {
